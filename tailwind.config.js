@@ -16,6 +16,13 @@ export default {
         },
       },
       fontFamily: {
+        display: [
+          "JetBrains Mono",
+          "SFMono-Regular",
+          "SF Mono",
+          "Consolas",
+          "monospace",
+        ],
         sans: [
           "Geist",
           "Inter",
@@ -36,20 +43,7 @@ export default {
         "terminal": "0 0 60px rgba(91, 192, 190, 0.12)",
         "terminal-lg": "0 0 100px rgba(91, 192, 190, 0.15)",
       },
-      animation: {
-        "fade-in": "fadeIn 0.5s ease-out",
-        "slide-up": "slideUp 0.5s ease-out",
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        slideUp: {
-          "0%": { opacity: "0", transform: "translateY(16px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-      },
+
     },
   },
   plugins: [],

@@ -23,19 +23,19 @@ export default function Header() {
         <nav className="hidden items-center gap-6 sm:flex">
           <a
             href="#features"
-            className="text-sm text-[var(--text-muted)] transition-[color] duration-200 hover:text-[var(--text)] focus-visible:text-[var(--primary)] focus-visible:outline-none"
+            className="py-2.5 text-sm text-[var(--text-muted)] transition-[color] duration-200 hover:text-[var(--text)] focus-visible:text-[var(--primary)] focus-visible:outline-none"
           >
             Features
           </a>
           <a
             href="#install"
-            className="text-sm text-[var(--text-muted)] transition-[color] duration-200 hover:text-[var(--text)] focus-visible:text-[var(--primary)] focus-visible:outline-none"
+            className="py-2.5 text-sm text-[var(--text-muted)] transition-[color] duration-200 hover:text-[var(--text)] focus-visible:text-[var(--primary)] focus-visible:outline-none"
           >
             Install
           </a>
           <a
             href="#roadmap"
-            className="text-sm text-[var(--text-muted)] transition-[color] duration-200 hover:text-[var(--text)] focus-visible:text-[var(--primary)] focus-visible:outline-none"
+            className="py-2.5 text-sm text-[var(--text-muted)] transition-[color] duration-200 hover:text-[var(--text)] focus-visible:text-[var(--primary)] focus-visible:outline-none"
           >
             Roadmap
           </a>
@@ -44,12 +44,12 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <button
             onClick={toggleTheme}
-            className="grid size-8 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text-muted)] transition-[border,color] duration-200 active:scale-[0.96] hover:border-[var(--primary)]/50 hover:text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
+            className="grid size-10 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text-muted)] transition-[border,color] duration-200 active:scale-[0.96] hover:border-[var(--primary)]/50 hover:text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
           >
-            <div className="relative size-3.5">
+            <div className="relative size-4">
               <Sun
-                className="absolute inset-0 size-3.5 transition-[scale,opacity,filter] duration-300"
+                className="absolute inset-0 size-4 transition-[scale,opacity,filter] duration-300"
                 style={{
                   scale: theme === "dark" ? "1" : "0.25",
                   opacity: theme === "dark" ? "1" : "0",
@@ -58,7 +58,7 @@ export default function Header() {
                 strokeWidth={1.8}
               />
               <Moon
-                className="size-3.5 transition-[scale,opacity,filter] duration-300"
+                className="size-4 transition-[scale,opacity,filter] duration-300"
                 style={{
                   scale: theme === "light" ? "1" : "0.25",
                   opacity: theme === "light" ? "1" : "0",

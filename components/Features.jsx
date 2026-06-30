@@ -66,9 +66,9 @@ export default function Features() {
                 viewport={{ once: true, margin: "-60px" }}
                 variants={cardVariants}
                 whileHover={{ y: -4 }}
-                className="group rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 transition-[border-color,box-shadow] duration-200 hover:border-[var(--primary)]/40 hover:shadow-[0_0_30px_rgba(91,192,190,0.06)] sm:p-6"
+                className="group rounded-2xl bg-[var(--surface)] p-5 shadow-[0_0_0_1px_var(--border)] transition-[box-shadow] duration-200 hover:shadow-[0_0_0_1px_var(--primary),0_0_30px_rgba(91,192,190,0.06)] sm:p-6"
               >
-                <div className="mb-4 grid size-11 place-items-center rounded-xl border border-[var(--primary)]/20 bg-[var(--primary)]/8 text-[var(--primary)]">
+                <div className="mb-4 grid size-11 place-items-center rounded-lg border border-[var(--primary)]/20 bg-[var(--primary)]/8 text-[var(--primary)]">
                   <Icon className="size-5" strokeWidth={1.8} />
                 </div>
                 <h3 className="text-lg font-medium text-[var(--text)] sm:text-xl">

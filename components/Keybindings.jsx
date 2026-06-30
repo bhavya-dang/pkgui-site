@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUp, ArrowDown, Search, CornerDownLeft, X, LogOut } from "lucide-react";
+import { Search, CornerDownLeft, X, LogOut } from "lucide-react";
 import ScrollReveal from "./ScrollReveal.jsx";
 
 const bindings = [

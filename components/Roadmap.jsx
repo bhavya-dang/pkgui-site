@@ -74,7 +74,7 @@ export default function Roadmap() {
               viewport={{ once: true, margin: "-60px" }}
               variants={cardVariants}
               whileHover={{ y: -4 }}
-              className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 transition-[border-color,box-shadow] duration-200 hover:border-[var(--primary)]/40 hover:shadow-[0_0_30px_rgba(91,192,190,0.06)] sm:p-6"
+              className="rounded-2xl bg-[var(--surface)] p-5 shadow-[0_0_0_1px_var(--border)] transition-[box-shadow] duration-200 hover:shadow-[0_0_0_1px_var(--primary),0_0_30px_rgba(91,192,190,0.06)] sm:p-6"
             >
               <div className="mb-3">
                 <div

@@ -2,16 +2,86 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const packages = [
-  { name: "git", version: "2.47.1", desc: "Distributed version control system", license: "GPL-2.0-only", homepage: "https://git-scm.com", deps: ["curl", "expat", "gettext", "pcre2", "zlib"] },
-  { name: "curl", version: "8.11.0", desc: "Get a file from an HTTP, HTTPS or FTP server", license: "MIT", homepage: "https://curl.se", deps: ["openssl", "zlib", "brotli"] },
-  { name: "wget", version: "1.25.0", desc: "Internet file retriever", license: "GPL-3.0-only", homepage: "https://www.gnu.org/software/wget", deps: ["openssl", "pcre2", "zlib"] },
-  { name: "node", version: "23.5.0", desc: "JavaScript runtime built on V8", license: "MIT", homepage: "https://nodejs.org", deps: ["icu4c", "openssl", "zlib"] },
-  { name: "python", version: "3.13.1", desc: "Interpreted, interactive, object-oriented language", license: "PSF-2.0", homepage: "https://www.python.org", deps: ["bzip2", "gdbm", "openssl", "readline", "sqlite", "xz", "zlib"] },
-  { name: "ruby", version: "3.4.1", desc: "Object-oriented scripting language", license: "Ruby", homepage: "https://www.ruby-lang.org", deps: ["gdbm", "libyaml", "openssl", "readline", "zlib"] },
-  { name: "vim", version: "9.1.0", desc: "Vi 'workalike' with many additional features", license: "Vim", homepage: "https://www.vim.org", deps: ["gettext", "lua", "python", "ruby"] },
-  { name: "neovim", version: "0.10.3", desc: "Hyperextensible Vim-based text editor", license: "Apache-2.0", homepage: "https://neovim.io", deps: ["gettext", "libuv", "luv", "tree-sitter", "unibilium"] },
-  { name: "tmux", version: "3.5a", desc: "Terminal multiplexer", license: "ISC", homepage: "https://tmux.github.io", deps: ["libevent", "ncurses"] },
-  { name: "jq", version: "1.7.1", desc: "Command-line JSON processor", license: "MIT", homepage: "https://jqlang.org", deps: ["oniguruma"] },
+  {
+    name: "git",
+    version: "2.47.1",
+    desc: "Distributed version control system",
+    license: "GPL-2.0-only",
+    homepage: "https://git-scm.com",
+    deps: ["curl", "expat", "gettext", "pcre2", "zlib"],
+  },
+  {
+    name: "curl",
+    version: "8.11.0",
+    desc: "Get a file from an HTTP, HTTPS or FTP server",
+    license: "MIT",
+    homepage: "https://curl.se",
+    deps: ["openssl", "zlib", "brotli"],
+  },
+  {
+    name: "wget",
+    version: "1.25.0",
+    desc: "Internet file retriever",
+    license: "GPL-3.0-only",
+    homepage: "https://www.gnu.org/software/wget",
+    deps: ["openssl", "pcre2", "zlib"],
+  },
+  {
+    name: "node",
+    version: "23.5.0",
+    desc: "JavaScript runtime built on V8",
+    license: "MIT",
+    homepage: "https://nodejs.org",
+    deps: ["icu4c", "openssl", "zlib"],
+  },
+  {
+    name: "python",
+    version: "3.13.1",
+    desc: "Interpreted, interactive, object-oriented language",
+    license: "PSF-2.0",
+    homepage: "https://www.python.org",
+    deps: ["bzip2", "gdbm", "openssl", "readline", "sqlite", "xz", "zlib"],
+  },
+  {
+    name: "ruby",
+    version: "3.4.1",
+    desc: "Object-oriented scripting language",
+    license: "Ruby",
+    homepage: "https://www.ruby-lang.org",
+    deps: ["gdbm", "libyaml", "openssl", "readline", "zlib"],
+  },
+  {
+    name: "vim",
+    version: "9.1.0",
+    desc: "Vi 'workalike' with many additional features",
+    license: "Vim",
+    homepage: "https://www.vim.org",
+    deps: ["gettext", "lua", "python", "ruby"],
+  },
+  {
+    name: "neovim",
+    version: "0.10.3",
+    desc: "Hyperextensible Vim-based text editor",
+    license: "Apache-2.0",
+    homepage: "https://neovim.io",
+    deps: ["gettext", "libuv", "luv", "tree-sitter", "unibilium"],
+  },
+  {
+    name: "tmux",
+    version: "3.5a",
+    desc: "Terminal multiplexer",
+    license: "ISC",
+    homepage: "https://tmux.github.io",
+    deps: ["libevent", "ncurses"],
+  },
+  {
+    name: "jq",
+    version: "1.7.1",
+    desc: "Command-line JSON processor",
+    license: "MIT",
+    homepage: "https://jqlang.org",
+    deps: ["oniguruma"],
+  },
 ];
 
 const PHASE = { MAIN: 0, SEARCH: 1 };
@@ -41,7 +111,10 @@ export default function TerminalPreview() {
     };
 
     const cycle = setInterval(() => {
-      if (!mountedRef.current) { clearInterval(cycle); return; }
+      if (!mountedRef.current) {
+        clearInterval(cycle);
+        return;
+      }
       setSelectedIdx((i) => (i + 1) % packages.length);
     }, 900);
     add(cycle);
@@ -54,7 +127,10 @@ export default function TerminalPreview() {
         const searchTerm = "git";
         let charIdx = 0;
         const typing = setInterval(() => {
-          if (!mountedRef.current) { clearInterval(typing); return; }
+          if (!mountedRef.current) {
+            clearInterval(typing);
+            return;
+          }
           charIdx++;
           setSearchTyping(searchTerm.slice(0, charIdx));
           if (charIdx >= searchTerm.length) {
@@ -78,7 +154,10 @@ export default function TerminalPreview() {
 
     return () => {
       mountedRef.current = false;
-      t.forEach((id) => { clearTimeout(id); clearInterval(id); });
+      t.forEach((id) => {
+        clearTimeout(id);
+        clearInterval(id);
+      });
       t.length = 0;
     };
   }, []);
@@ -103,12 +182,17 @@ export default function TerminalPreview() {
     >
       {/* Title Bar */}
       <div className="flex items-center gap-3 border-b border-[#1c2a3a] bg-[#0f1720] px-4 py-2.5 select-none">
-        <span className="font-mono text-xs font-medium tracking-wider text-[#5bc0be]">
-          ⬡ pkgui
-        </span>
-        <span className="ml-auto font-mono text-[10px] text-[#60788a] tracking-wide">
+        <div className="flex items-center gap-1.5 mr-1">
+          <span className="size-2.5 rounded-full bg-[#ff5f57]" />
+          <span className="size-2.5 rounded-full bg-[#febc2e]" />
+          <span className="size-2.5 rounded-full bg-[#28c840]" />
+        </div>
+        {/* <span className="font-mono text-xs font-medium tracking-wider text-[#5bc0be]">
+          pkgui
+        </span>*/}
+        {/* <span className="ml-auto font-mono text-[10px] text-[#60788a] tracking-wide">
           {packages.length} packages
-        </span>
+        </span>*/}
       </div>
 
       {/* Terminal Content */}
@@ -159,29 +243,43 @@ export default function TerminalPreview() {
               </div>
               <div className="flex-1 space-y-2.5 px-3 py-3 text-[#c0d4e4]">
                 <div className="flex items-baseline gap-2">
-                  <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">Version</span>
+                  <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                    Version
+                  </span>
                   <span className="tabular-nums">{selectedPkg.version}</span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">Description</span>
-                  <span className="opacity-85 leading-snug">{selectedPkg.desc}</span>
+                  <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                    Description
+                  </span>
+                  <span className="opacity-85 leading-snug">
+                    {selectedPkg.desc}
+                  </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">Homepage</span>
+                  <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                    Homepage
+                  </span>
                   <span className="text-[#5bc0be] underline underline-offset-2 decoration-dotted decoration-[#5bc0be]/30">
                     {selectedPkg.homepage}
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">License</span>
+                  <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                    License
+                  </span>
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-[#5bc0be]/20 bg-[#5bc0be]/5 px-2.5 py-0.5 text-[11px] text-[#5bc0be]">
                     {selectedPkg.license}
                   </span>
                 </div>
                 {selectedPkg.deps.length > 0 && (
                   <div className="flex items-baseline gap-2">
-                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">Dependencies</span>
-                    <span className="opacity-85">{selectedPkg.deps.join(", ")}</span>
+                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                      Dependencies
+                    </span>
+                    <span className="opacity-85">
+                      {selectedPkg.deps.join(", ")}
+                    </span>
                   </div>
                 )}
               </div>
@@ -247,21 +345,33 @@ export default function TerminalPreview() {
                 </div>
                 <div className="flex-1 space-y-2.5 px-3 py-3 text-[#c0d4e4]">
                   <div className="flex items-baseline gap-2">
-                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">Version</span>
-                    <span className="tabular-nums">{filtered[0]?.version || ""}</span>
+                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                      Version
+                    </span>
+                    <span className="tabular-nums">
+                      {filtered[0]?.version || ""}
+                    </span>
                   </div>
                   <div className="flex items-baseline gap-2">
-                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">Description</span>
-                    <span className="opacity-85 leading-snug">{filtered[0]?.desc || ""}</span>
+                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                      Description
+                    </span>
+                    <span className="opacity-85 leading-snug">
+                      {filtered[0]?.desc || ""}
+                    </span>
                   </div>
                   <div className="flex items-baseline gap-2">
-                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">Homepage</span>
+                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                      Homepage
+                    </span>
                     <span className="text-[#5bc0be] underline underline-offset-2 decoration-dotted decoration-[#5bc0be]/30">
                       {filtered[0]?.homepage || ""}
                     </span>
                   </div>
                   <div className="flex items-baseline gap-2">
-                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">License</span>
+                    <span className="shrink-0 w-[90px] text-[#60788a] text-[10px] tracking-wider uppercase">
+                      License
+                    </span>
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-[#5bc0be]/20 bg-[#5bc0be]/5 px-2.5 py-0.5 text-[11px] text-[#5bc0be]">
                       {filtered[0]?.license || ""}
                     </span>
@@ -275,15 +385,17 @@ export default function TerminalPreview() {
 
       {/* Footer */}
       <div className="flex items-center justify-between border-t border-[#1c2a3a] bg-[#0f1720] px-4 py-2 text-[10px] text-[#60788a] tracking-wide">
-        <span>
+        {/* <span>
           {phase === PHASE.SEARCH
             ? `${filtered.length} matches`
             : `${packages.length} formulae`}
-        </span>
+        </span>*/}
         <span className="flex items-center gap-2">
-          <span className="hidden sm:inline text-[#5bc0be]/60">/ search</span>
-          <span className="text-[#5bc0be]/60">↑↓ navigate</span>
-          <span className="text-[#5bc0be]/60">q quit</span>
+          <span className="hidden sm:inline text-[#5bc0be]/60">
+            / search • ↑↓ navigate • q quit
+          </span>
+          {/* <span className="text-[#5bc0be]/60">↑↓ navigate</span>
+          <span className="text-[#5bc0be]/60">q quit</span>*/}
         </span>
       </div>
     </motion.div>
