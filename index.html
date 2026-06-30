@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" href="/pkgui-icon.svg" type="image/svg+xml" />
+
+        <meta
+            name="description"
+            content="pkgui — A terminal UI for managing packages across multiple package managers."
+        />
+
+        <title>pkgui — TUI for your package managers</title>
+
+        <meta
+            property="og:title"
+            content="pkgui — TUI for your package managers"
+        />
+        <meta
+            property="og:description"
+            content="A terminal UI for managing packages across multiple package managers. Homebrew, npm, pip, and more."
+        />
+        <meta property="og:url" content="https://pkgui.dev" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="pkgui" />
+        <meta
+            name="twitter:title"
+            content="pkgui — TUI for your package managers"
+        />
+        <meta
+            name="twitter:description"
+            content="A terminal UI for managing packages across multiple package managers."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <link rel="preconnect" href="https://api.github.com" />
+    </head>
+    <body>
+        <script>
+          (function() {
+            var theme = localStorage.getItem('pkgui-theme');
+            if (!theme) theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.setAttribute('data-theme', theme);
+          })();
+        </script>
+    
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
+</html>
