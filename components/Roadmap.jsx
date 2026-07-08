@@ -10,10 +10,10 @@ const roadmapItems = [
     tone: "gold",
   },
   {
-    title: "npm / yarn / pnpm",
-    desc: "Browse and manage Node.js packages from npm and its alternatives.",
-    status: "Planned",
-    tone: "muted",
+    title: "npm",
+    desc: "Browse and manage Node.js packages from npm",
+    status: "Completed",
+    tone: "green",
   },
   {
     title: "pip",

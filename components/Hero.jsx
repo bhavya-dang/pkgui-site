@@ -13,7 +13,7 @@ const fadeUp = (delay = 0) => ({
   },
 });
 
-const BREW_CMD = "brew install bhavya-dang/pkgui/pkgui";
+const BREW_CMD = "go install github.com/bhavya-dang/pkgui@latest";
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
@@ -34,7 +34,9 @@ export default function Hero() {
           >
             Manage all your packages.
             <br />
-            <span className="block mt-2 sm:mt-3 text-[var(--accent)]">One terminal.</span>
+            <span className="block mt-2 sm:mt-3 text-[var(--accent)]">
+              One terminal.
+            </span>
           </motion.h1>
 
           <motion.p

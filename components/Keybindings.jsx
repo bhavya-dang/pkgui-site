@@ -3,10 +3,25 @@ import { Search, CornerDownLeft, X, LogOut } from "lucide-react";
 import ScrollReveal from "./ScrollReveal.jsx";
 
 const bindings = [
-  { keys: ["↑", "↓"], label: "↑ / ↓", action: "Navigate package list", icon: null },
-  { keys: ["/"], label: "/", action: "Start search (type to filter)", icon: Search },
+  {
+    keys: ["↑", "↓"],
+    label: "↑ / ↓",
+    action: "Navigate package list",
+    icon: null,
+  },
+  {
+    keys: ["/"],
+    label: "/",
+    action: "Start search (type to filter)",
+    icon: Search,
+  },
   { keys: ["Esc"], label: "Esc", action: "Exit search", icon: X },
-  { keys: ["Enter"], label: "Enter", action: "Confirm search", icon: CornerDownLeft },
+  {
+    keys: ["->", "<-"],
+    label: "-> / <-",
+    action: "Navigate between package managers",
+    // icon: X,
+  },
   { keys: ["q", "Ctrl+C"], label: "q / Ctrl+C", action: "Quit", icon: LogOut },
 ];
 
@@ -67,7 +82,9 @@ export default function Keybindings() {
                     ))}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
-                    {Icon && <Icon className="size-3.5 shrink-0" strokeWidth={1.8} />}
+                    {Icon && (
+                      <Icon className="size-3.5 shrink-0" strokeWidth={1.8} />
+                    )}
                     <span>{binding.action}</span>
                   </div>
                 </motion.div>

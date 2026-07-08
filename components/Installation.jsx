@@ -4,16 +4,16 @@ import { Check, Copy } from "lucide-react";
 import ScrollReveal from "./ScrollReveal.jsx";
 
 const installMethods = [
-  {
-    id: "brew",
-    label: "Homebrew",
-    code: "brew install bhavya-dang/pkgui/pkgui",
-    highlight: "brew",
-  },
+  // {
+  //   id: "brew",
+  //   label: "Homebrew",
+  //   code: "brew install bhavya-dang/pkgui/pkgui",
+  //   highlight: "brew",
+  // },
   {
     id: "go",
     label: "Go",
-    code: "go install github.com/bhavyadang/pkgui@latest",
+    code: "go install github.com/bhavya-dang/pkgui@latest",
     highlight: "go",
   },
   {
@@ -25,7 +25,7 @@ const installMethods = [
   {
     id: "manual",
     label: "Manual",
-    code: "git clone https://github.com/bhavya-dang/pkgui.git\ncd pkgui\ngo build -o build/pkgui .\ncp build/pkgui \"$GOPATH/bin/pkgui\"",
+    code: 'git clone https://github.com/bhavya-dang/pkgui.git\ncd pkgui\ngo build -o build/pkgui .\ncp build/pkgui "$GOPATH/bin/pkgui"',
     highlight: "git",
   },
 ];
@@ -81,16 +81,13 @@ const tabVariants = {
 };
 
 export default function Installation() {
-  const [active, setActive] = useState("brew");
+  const [active, setActive] = useState("go");
 
   const current = installMethods.find((m) => m.id === active);
 
   return (
     <ScrollReveal>
-      <section
-        id="install"
-        className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
-      >
+      <section id="install" className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
         <motion.div
           className="mb-14 text-center"
           initial={{ opacity: 0, y: 16 }}
@@ -138,7 +135,7 @@ export default function Installation() {
           </motion.div>
 
           <p className="mt-4 text-center text-xs text-[var(--text-muted)]">
-            Requires Go 1.25+ and Homebrew (if using the Homebrew method).
+            Requires Go 1.25+.
           </p>
         </div>
       </section>
