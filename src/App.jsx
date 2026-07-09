@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "../components/Header.jsx";
 import Hero from "../components/Hero.jsx";
 import Footer from "../components/Footer.jsx";
@@ -44,6 +45,7 @@ function App() {
         <Roadmap />
       </Suspense>
       <Footer />
+      <Analytics />
     </div>
   );
 }
