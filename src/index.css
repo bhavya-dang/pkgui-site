@@ -37,12 +37,13 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
   font-family:
     Geist,
     Inter,
@@ -67,6 +68,7 @@ body::before {
 #root {
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
 }
 
 
@@ -96,6 +98,14 @@ p, li {
 
 .tabular-nums {
   font-variant-numeric: tabular-nums;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

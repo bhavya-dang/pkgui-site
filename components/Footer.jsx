@@ -34,8 +34,8 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="px-5 py-8 sm:px-8 lg:px-10">
-        <div className="mt-8 flex flex-col gap-5 text-sm sm:flex-row sm:items-center sm:justify-between">
+      <div className="px-4 py-8 sm:px-8 lg:px-10">
+        <div className="mt-8 flex flex-col gap-4 text-sm sm:flex-row sm:items-center sm:justify-between sm:gap-5">
           <div className="space-y-2">
             <p className="flex items-center gap-1.5 text-[var(--text-muted)]">
               Built with <Heart className="size-3.5 text-[var(--primary)]" fill="currentColor" stroke="none" /> using{" "}

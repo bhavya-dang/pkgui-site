@@ -37,7 +37,7 @@ const rowVariants = {
 export default function Keybindings() {
   return (
     <ScrollReveal>
-      <section className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+      <section className="px-4 py-16 sm:px-8 lg:px-10 lg:py-28">
         <div className="mx-auto max-w-2xl">
           <motion.div
             className="mb-14 text-center"
@@ -65,27 +65,27 @@ export default function Keybindings() {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-40px" }}
                   variants={rowVariants}
-                  className={`flex items-center gap-4 px-5 py-3.5 transition-[background] duration-150 hover:bg-[var(--surface)] ${
+                  className={`flex items-center gap-3 px-4 py-3 transition-[background] duration-150 hover:bg-[var(--surface)] sm:gap-4 sm:px-5 sm:py-3.5 ${
                     idx < bindings.length - 1
                       ? "border-b border-[var(--border)]"
                       : ""
                   }`}
                 >
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex shrink-0 items-center gap-1.5">
                     {binding.keys.map((key) => (
                       <kbd
                         key={key}
-                        className="inline-flex items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1 font-mono text-xs font-medium text-[var(--text)] shadow-sm min-w-[32px]"
+                        className="inline-flex items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)] px-2 py-0.5 font-mono text-[11px] font-medium text-[var(--text)] shadow-sm sm:px-2.5 sm:py-1 sm:text-xs"
                       >
                         {key}
                       </kbd>
                     ))}
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
+                  <div className="flex min-w-0 items-center gap-2 text-xs text-[var(--text-muted)] sm:text-sm">
                     {Icon && (
                       <Icon className="size-3.5 shrink-0" strokeWidth={1.8} />
                     )}
-                    <span>{binding.action}</span>
+                    <span className="truncate">{binding.action}</span>
                   </div>
                 </motion.div>
               );

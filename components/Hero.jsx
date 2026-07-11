@@ -25,11 +25,11 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative mx-auto w-full max-w-screen-2xl px-5 pt-28 pb-12 sm:px-8 sm:pt-36 sm:pb-16 lg:min-h-screen lg:flex lg:items-center lg:px-10">
-      <div className="w-full lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-16">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-10 lg:items-start lg:text-left lg:order-2 lg:max-w-none lg:mx-0 lg:mb-0">
+    <section className="relative mx-auto w-full max-w-screen-2xl px-4 pt-24 pb-10 sm:px-8 sm:pt-36 sm:pb-16 lg:min-h-screen lg:flex lg:items-center lg:px-10">
+      <div className="w-full min-w-0 lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-16">
+        <div className="flex min-w-0 flex-col items-center text-center max-w-4xl mx-auto mb-10 lg:items-start lg:text-left lg:order-2 lg:max-w-none lg:mx-0 lg:mb-0">
           <motion.h1
-            className="font-display text-balance text-4xl font-semibold mb-7 tracking-tight text-[var(--text)] sm:text-6xl lg:text-6xl xl:text-7xl"
+            className="font-display text-balance text-[1.75rem] font-semibold mb-6 tracking-tight text-[var(--text)] sm:text-6xl lg:text-6xl xl:text-7xl"
             {...fadeUp(0.1)}
           >
             Manage all your packages.
@@ -49,12 +49,12 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-8 flex flex-col items-center gap-3 sm:flex-row"
+            className="mt-8 flex w-full min-w-0 flex-col items-center gap-3 sm:flex-row"
             {...fadeUp(0.4)}
           >
             <motion.a
               href="https://github.com/bhavya-dang/pkgui"
-              className="inline-flex w-full h-11 items-center justify-center gap-2 rounded-2xl bg-[var(--primary)] px-4 text-sm font-medium text-white transition active:scale-[0.96] hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
+              className="inline-flex w-full min-w-0 h-11 items-center justify-center gap-2 rounded-2xl bg-[var(--primary)] px-4 text-sm font-medium text-white transition active:scale-[0.96] hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -64,7 +64,7 @@ export default function Hero() {
 
             <button
               onClick={handleCopy}
-              className="group inline-flex h-11 items-center gap-2 rounded-2xl border border-[var(--border)] bg-[#0c1017] px-3.5 font-mono text-sm text-[#dce1e8] transition active:scale-[0.96] hover:border-[var(--primary)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
+              className="group inline-flex w-full min-w-0 sm:w-auto h-11 items-center gap-2 rounded-2xl border border-[var(--border)] bg-[#0c1017] px-3.5 font-mono text-sm text-[#dce1e8] transition active:scale-[0.96] hover:border-[var(--primary)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
             >
               <span className="text-[var(--accent)] shrink-0">$</span>
               <span className="truncate">{BREW_CMD}</span>

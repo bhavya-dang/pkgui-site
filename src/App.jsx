@@ -19,25 +19,25 @@ function App() {
       <NoiseBackground />
       <Header />
       <Hero />
-      <div className="px-5 sm:px-8 lg:px-10">
+      <div className="px-4 sm:px-8 lg:px-10">
         <div className="border-t border-[var(--border)]" />
       </div>
       <Suspense fallback={<SectionFallback />}>
         <Features />
       </Suspense>
-      <div className="px-5 sm:px-8 lg:px-10">
+      <div className="px-4 sm:px-8 lg:px-10">
         <div className="border-t border-[var(--border)]" />
       </div>
       <Suspense fallback={<SectionFallback />}>
         <Installation />
       </Suspense>
-      <div className="px-5 sm:px-8 lg:px-10">
+      <div className="px-4 sm:px-8 lg:px-10">
         <div className="border-t border-[var(--border)]" />
       </div>
       <Suspense fallback={<SectionFallback />}>
         <Keybindings />
       </Suspense>
-      <div className="px-5 sm:px-8 lg:px-10">
+      <div className="px-4 sm:px-8 lg:px-10">
         <div className="border-t border-[var(--border)]" />
       </div>
       <Suspense fallback={<SectionFallback />}>

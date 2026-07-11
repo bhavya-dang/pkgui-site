@@ -48,7 +48,7 @@ const cardVariants = {
 export default function Roadmap() {
   return (
     <ScrollReveal>
-      <section id="roadmap" className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+      <section id="roadmap" className="px-4 py-16 sm:px-8 lg:px-10 lg:py-28">
         <motion.div
           className="mb-14 text-center"
           initial={{ opacity: 0, y: 16 }}

@@ -38,7 +38,7 @@ const cardVariants = {
 export default function Features() {
   return (
     <ScrollReveal>
-      <section id="features" className="px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+      <section id="features" className="px-4 py-16 sm:px-8 lg:px-10 lg:py-28">
         <motion.div
           className="mb-14 text-center"
           initial={{ opacity: 0, y: 16 }}
@@ -54,7 +54,7 @@ export default function Features() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 overflow-hidden sm:grid-cols-2">
           {features.map((feature, idx) => {
             const Icon = feature.icon;
             return (
