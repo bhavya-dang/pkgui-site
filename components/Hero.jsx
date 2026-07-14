@@ -49,12 +49,12 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-8 flex w-full min-w-0 flex-col items-center gap-3 sm:flex-row"
+            className="mt-8 flex w-full min-w-0 flex-col items-center gap-3 sm2:flex-row sm2:justify-center"
             {...fadeUp(0.4)}
           >
             <motion.a
               href="https://github.com/bhavya-dang/pkgui"
-              className="inline-flex w-full min-w-0 h-11 items-center justify-center gap-2 rounded-2xl bg-[var(--primary)] px-4 text-sm font-medium text-white transition active:scale-[0.96] hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
+              className="inline-flex w-full sm2:w-auto min-w-0 h-11 items-center justify-center gap-2 rounded-2xl bg-[var(--primary)] px-4 text-sm font-medium text-white transition active:scale-[0.96] hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -64,7 +64,7 @@ export default function Hero() {
 
             <button
               onClick={handleCopy}
-              className="group inline-flex w-full min-w-0 sm:w-auto h-11 items-center gap-2 rounded-2xl border border-[var(--border)] bg-[#0c1017] px-3.5 font-mono text-sm text-[#dce1e8] transition active:scale-[0.96] hover:border-[var(--primary)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
+              className="group inline-flex min-w-0 w-full sm2:w-auto h-11 items-center gap-2 rounded-2xl border border-[var(--border)] bg-[#0c1017] px-3.5 font-mono text-sm text-[#dce1e8] transition active:scale-[0.96] hover:border-[var(--primary)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
             >
               <span className="text-[var(--accent)] shrink-0">$</span>
               <span className="truncate">{BREW_CMD}</span>

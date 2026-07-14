@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        sm2: "704px",
+      },
       colors: {
         pkgui: {
           primary: "#5bc0be",
